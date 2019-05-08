@@ -18,11 +18,12 @@ public class Carbon extends Thread {
 	    	sharedMethane.mutex.acquire(); //first carbon thread to methane blocks other threads to bond
 	    	sharedMethane.addCarbon(); //makes a bond C if C thread gets there before 4 H threads
 	    	//conditions for group to bond
-	    	if(sharedMethane.getCarbon()>=1 && sharedMethane.getHydrogen() >=4){
-	    		sharedMethane.carbonQ.release(1);
-	    		sharedMethane.removeCarbon(1);
+	    	if(sharedMethane.getHydrogen() >=4){
 	    		sharedMethane.hydrogensQ.release(4);
 	    		sharedMethane.removeHydrogen(4);
+	    		sharedMethane.carbonQ.release();
+	    		sharedMethane.removeCarbon(1);
+	    		
 	    	}
 	    	else{
 	    		sharedMethane.mutex.release();
