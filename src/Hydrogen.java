@@ -22,12 +22,12 @@ public class Hydrogen extends Thread {
 	    	//condition to form a Methane has to be CH4 (1 carbon, 4 hydrogen atoms must be bonded)
 	    	//check if carbon atoms in methane is = 1 or more && //check if hydrogen atoms in methane is = 4 or more
 
-	    	if(sharedMethane.getCarbon() >= 1 && sharedMethane.getHydrogen() >= 4){
-	    		sharedMethane.carbonQ.release();
-	    		sharedMethane.removeCarbon(1);
-	    		
+	    	if(sharedMethane.getHydrogen() >= 4 && sharedMethane.getCarbon() >= 1){
 	    		sharedMethane.hydrogensQ.release();
 	    		sharedMethane.removeHydrogen(4);
+	    		sharedMethane.carbonQ.release();
+	    		sharedMethane.removeCarbon(1);
+
 	    	}
 	    	else{
 	    		sharedMethane.mutex.release();
