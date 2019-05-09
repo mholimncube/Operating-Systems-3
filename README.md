@@ -30,8 +30,8 @@ has to wait for a carbon thread and a further three hydrogen threads. Etc.
 
 * Run Terminal/CMD to directory of project
 * Make file > to compile the java files
-* Type - "java CleaningDishes 6 3 100 100" to run test 
-* Alternatively type run/run1 to run test which have input values 6 3 100 100, 4 2 100 100
+* Type - "java RunSimulation 12 3" to run test 
+* Alternatively type run/run1/2 to run test which have input values 12 3,16 4
 * Delete .class files make > clean
 
 
