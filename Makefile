@@ -30,6 +30,9 @@ run:
 
 run1:	
 	$(JVM) -cp $(BINDIR) RunSimulation 16 4
+	
+run1:	
+	$(JVM) -cp $(BINDIR) RunSimulation 24 6
 
 
 
